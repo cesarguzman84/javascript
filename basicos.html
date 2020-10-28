@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+
+</head>
+<body>
+    <h1>Fundamentos de JavaScript</h1>
+    <script> 
+    
+    var hola = "hola mundo";  //variable con la palabra var es una variable global
+    console.log(hola);
+    let hello = "Hello word"; // variable de ambito local, se debe usar esta preferiblemente que var para evitar problemas futuros
+
+    const PI = 3.1616;  // creacion de constante
+    console.log(PI)
+
+    let objeto={        //creacion de objeto
+        nombre:"Cesar",
+        edad:35
+    }
+    console.log(objeto)
+    objeto.correo="cesarguzman84@gmail.com"
+    console.log(objeto)
+
+
+
+    let nombre= "Cesarin"
+    let apellido = "Guzman"
+    let saludo =`Mi nombre es ${nombre} ${apellido}`;  //esta es otra forma de concatenar, se llama TEMPLATES STRINGS
+    console.log(saludo)
+
+
+    //NUMEROS:
+
+    let a=2;
+    let b= new Number(1);
+    let c= 7.19;
+    let d= "5.8"
+
+    console.log(a,b);
+    console.log(c.toFixed(1)); //esta define el numero de decimales que se muestran en pantalla
+    console.log(c.toFixed(5));
+    console.log(parseInt(c)); //imprime solo la parte entera
+    console.log(typeof c); //muestra que tipo de dato contiene la variable
+    console.log(c + parseInt(d)); //convierte lo que hay en la variable d que es un string en un numero, esto se llama "hacer casting" o "castear", este solo sumo la parte entera
+    console.log(c + parseFloat(d)); //suma con la parte decimal
+
+
+    let verdadero= true;
+    let falso = false;  //datos booleanos
+
+
+    /*FUNCIONES
+    Una funcion es un bloque de codigo, autocontenido, que se puede definir una vez y ejecutar en 
+    cialquier momento. Opcionalmente, una funcion puede aceptar parametros y devolver un valor.
+    Las funciones en JavaScript son objetos*/
+
+    //Funcion Declarada:
+
+    function estoEsUnaFuncion() { 
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+    }
+
+    
+
+    /*//Invocacion de funcion:
+    estoEsUnaFuncion();
+    estoEsUnaFuncion();
+    estoEsUnaFuncion();
+
+    */
+
+    function unaFuncionQueDevuelveValor(){
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+        return "La funcion a retornado una cadena de texto";
+    }
+    let valorDeFuncion = unaFuncionQueDevuelveValor();
+    console.log(valorDeFuncion);
+
+    function saludar(nombre, edad) {
+        console.log(`Mi nombre es ${nombre} y tengo ${edad} años`);
+
+    }
+
+    saludar("Mirringa", 2)
+
+    //Funcion anonima
+
+    const funcionExpresada = function(){
+        console.log("Esto es una funcion expresada, es decir, una funcion que se le ha asignado como valor una variable, si invocamos esta funcion antes de su definicion JS nos dira...")
+        }
+    
+    funcionExpresada();
+
+
+    //ARREGLOS:
+
+    const f = []; //arreglo vacio
+    const g = [1, true, "Hola", ["A", "b", "c"]];
+    console.log(f);
+    console.log(g);
+    console.log(g[2]); //acceder a una posicion del array
+
+    
+    const h= Array(100).fill("Mi amor"); //Para llenar un array con el valor que deseemos
+    console.log(h);
+
+    const varios=Array.of("Leidy", "Tatiana", "Lina", 1,2,3); //Asi se crea un array
+    console.log(varios);
+    varios.push("Diana"); //Le añade un elemento en la ultima posicion al array
+    console.log(varios);
+
+    varios.pop(); //Le quita el elemento que se encuentra en la ultima posicion al array
+    console.log(varios);
+
+    const colores = ["Rojo", "Verde", "Azul"];
+
+    colores.forEach(function(el, index) {
+        console.log(`<li id="${index}">${el}</li>`);
+
+    });
+    
+
+
+/* dentro de un objeto a las variables se le van a llamar
+atributos/propiedades y a als funciones se les llama metodos*/
+
+
+    const cesar = {  //esto es un objeto
+        nombre: "Cesar",
+        apellido: "Guzman",
+        edad: 35,
+        pasatiempos: ["Leer", "Videojuegos"],
+        soltero: true,
+        contacto: {
+            email:"cesarguzman84@gmail.com",
+            movil:"3017052828"
+
+        },
+
+    saludar: function () {  // esto es una funcion
+        console.log("Holiss")         
+    },
+
+    decirMiNombre: function () {
+        console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años`)
+    }
+
+}
+
+
+console.log(cesar);
+console.log(cesar.apellido);
+console.log(cesar.edad);
+cesar.saludar();
+cesar.decirMiNombre();
+
+
+
+    
+
+
+    </script>
+
+</body>
+
+
+</html>
